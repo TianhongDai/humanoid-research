@@ -21,8 +21,6 @@ if __name__ == '__main__':
     args = get_args()
     # make environment
     env = gym.make(args.env_name)
-    if args.env_name == 'Humanoid-v2':
-        env = rew_scale(env, 0.1)
     network = MLP_Net(env.observation_space.shape[0], env.action_space.shape[0], args.dist)
     ppo_trainer = ppo_agent(env, args, network)
     ppo_trainer.learn()
