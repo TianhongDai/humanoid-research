@@ -1,6 +1,7 @@
 from arguments import get_args
 from ppo_agent import ppo_agent
 from models import MLP_Net
+import roboschool
 import gym
 import os
 
